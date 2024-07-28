@@ -29,13 +29,18 @@ public class UserBuilderTest {
 
     @Test
     public void shouldUseRandomUserData() {
+
+        final String AVATAR = "http://example.com/image.jpg";
+        final String FIRST_NAME = "Krzysztof";
+        final String LAST_NAME = "Kowalski";
+        final String USERNAME = "random_username_123";
         // given
         RandomUserService randomUserService = Mockito.mock(RandomUserService.class);
         RandomUserDto randomUserDto = new RandomUserDto();
-        randomUserDto.setUsername("random_username_123");
-        randomUserDto.setAvatar("http://example.com/image.jpg");
-        randomUserDto.setFirst_name("Krzysztof");
-        randomUserDto.setLast_name("Kowalski");
+        randomUserDto.setUsername(USERNAME);
+        randomUserDto.setAvatar(AVATAR);
+        randomUserDto.setFirst_name(FIRST_NAME);
+        randomUserDto.setLast_name(LAST_NAME);
         Mockito.when(randomUserService.fetchRandomUser()).thenReturn(randomUserDto);
 
         UserBuilder userBuilder = new UserBuilder(randomUserService);
@@ -46,7 +51,9 @@ public class UserBuilderTest {
 
         // then
         assertThat(user.getEmail()).isEqualTo(email);
-        assertThat(user.getUsername()).isEqualTo("random_username_123");
-        assertThat(user.getAvatar()).isEqualTo("http://example.com/image.jpg");
+        assertThat(user.getUsername()).isEqualTo(USERNAME);
+        assertThat(user.getAvatar()).isEqualTo(AVATAR);
+        assertThat(user.getFirst_name()).isEqualTo(FIRST_NAME);
+        assertThat(user.getLast_name()).isEqualTo(LAST_NAME);
     }
 }
