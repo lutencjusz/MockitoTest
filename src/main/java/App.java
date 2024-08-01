@@ -1,4 +1,5 @@
 import model.User;
+import service.RandomUserService;
 
 public class App {
     public static void main(String[] args) {

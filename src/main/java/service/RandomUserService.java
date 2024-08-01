@@ -1,3 +1,5 @@
+package service;
+
 import com.google.gson.Gson;
 import model.User;
 

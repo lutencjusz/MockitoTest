@@ -1,10 +1,11 @@
 import model.User;
+import service.RandomUserService;
 
 import java.util.Objects;
 
 public class UserBuilder {
 
-    private RandomUserService randomUserService;
+    private final RandomUserService randomUserService;
 
     public UserBuilder(RandomUserService randomUserService) {
         this.randomUserService = randomUserService;

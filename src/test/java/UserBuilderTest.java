@@ -1,6 +1,7 @@
 import model.User;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import service.RandomUserService;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
