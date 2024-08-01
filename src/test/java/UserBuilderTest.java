@@ -25,6 +25,7 @@ public class UserBuilderTest {
         assertThat(user.getAvatar()).isEqualTo(avatar);
         assertThat(user.getFirst_name()).isEqualTo(first_name);
         assertThat(user.getLast_name()).isEqualTo(last_name);
+        System.out.println(user);
     }
 
     @Test
@@ -55,5 +56,6 @@ public class UserBuilderTest {
         assertThat(user.getAvatar()).isEqualTo(AVATAR);
         assertThat(user.getFirst_name()).isEqualTo(FIRST_NAME);
         assertThat(user.getLast_name()).isEqualTo(LAST_NAME);
+        System.out.println(user);
     }
 }
