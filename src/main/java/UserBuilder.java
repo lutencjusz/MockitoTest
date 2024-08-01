@@ -16,7 +16,7 @@ public class UserBuilder {
         user.setEmail(email);
 
         User randomUserDto = null;
-        if (username == null || avatar == null) {
+        if (username == null || avatar == null || first_name == null || last_name == null) {
             randomUserDto = randomUserService.fetchRandomUser();
         }
         user.setAvatar(avatar != null ? avatar : randomUserDto.getAvatar());
