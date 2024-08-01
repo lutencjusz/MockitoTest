@@ -1,4 +1,3 @@
-import model.RandomUserDto;
 import model.User;
 
 import java.util.Objects;
@@ -15,7 +14,7 @@ public class UserBuilder {
         User user = new User();
         user.setEmail(email);
 
-        RandomUserDto randomUserDto = null;
+        User randomUserDto = null;
         if (username == null || avatar == null) {
             randomUserDto = randomUserService.fetchRandomUser();
         }

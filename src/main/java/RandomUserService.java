@@ -1,5 +1,5 @@
 import com.google.gson.Gson;
-import model.RandomUserDto;
+import model.User;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -10,7 +10,7 @@ public class RandomUserService {
 
     private static final String RANDOM_USER_URL = "https://random-data-api.com/api/users/random_user";
 
-    public RandomUserDto fetchRandomUser() {
+    public User fetchRandomUser() {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -19,7 +19,7 @@ public class RandomUserService {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             Gson gson = new Gson();
             String body = response.body();
-            return gson.fromJson(body, RandomUserDto.class);
+            return gson.fromJson(body, User.class);
         } catch (Exception e) {
             throw new RuntimeException("Coś poszło nie tak", e);
         }

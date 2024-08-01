@@ -1,4 +1,3 @@
-import model.RandomUserDto;
 import model.User;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -36,7 +35,7 @@ public class UserBuilderTest {
         final String USERNAME = "random_username_123";
         // given
         RandomUserService randomUserService = Mockito.mock(RandomUserService.class);
-        RandomUserDto randomUserDto = new RandomUserDto();
+        User randomUserDto = new User();
         randomUserDto.setUsername(USERNAME);
         randomUserDto.setAvatar(AVATAR);
         randomUserDto.setFirst_name(FIRST_NAME);
